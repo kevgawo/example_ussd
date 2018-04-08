@@ -16,32 +16,97 @@ app.post('*', (req, res) => {
   let {sessionId, serviceCode, phoneNumber, text} = req.body
   if (text == '') {
     // This is the first request. Note how we start the response with CON
-    let response = `CON What would you want to check
-    1. My Account
-    2. My phone number`
+    //First session to get client info
+    let response = `CON Make Easy payments to yur service provider.Enter Customer Code and press 1 to continue:
+    1.Continiue to payments`
     res.send(response)
+    
+  //show client information and mode of payment
   } else if (text == '1') {
     // Business logic for first level response
-    let response = `CON Choose account information you want to view
-    1. Account number
-    2. Account balance`
+    let customerName = 'Kevin Gawo'
+    let customerBill = 'GHC 300'
+    
+    let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
+    1. MTN 
+    2. Airtel 
+    3. Vodaphone `
     res.send(response)
   } else if (text == '2') {
     // Business logic for first level response
     let response = `END Your phone number is ${phoneNumber}`
     res.send(response)
+    
+    //Paywith MTN
   } else if (text == '1*1') {
-    // Business logic for first level response
-    let accountNumber = 'ACC1001'
+    // Business logic for first level responsV
     // This is a terminal request. Note how we start the response with END
-    let response = `END Your account number is ${accountNumber}`
+    let response = `CON Enter Amount
+    1.Continue`
     res.send(response)
+    
+  } else if (text == '1*1*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let response = `CON Enter Pin:
+    1.Confirm Payment`
+    res.send(response)
+    
+   } else if (text == '1*1*1*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let companyName = 'Jekora Limited'
+    let response = `END Thank You for Choosing ${companyName}'
+    res.send(response)
+     //End of pay with MTN
+
+        //Pay with Airtel
   } else if (text == '1*2') {
-    // This is a second level response where the user selected 1 in the first instance
-    let balance = 'GHS 10,000'
+    // Business logic for first level responsV
     // This is a terminal request. Note how we start the response with END
-    let response = `END Your balance is ${balance}`
+    let response = `CON Enter Amount
+    1.Continue`
     res.send(response)
+    
+  } else if (text == '2*1*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let response = `CON Enter Pin:
+    1.Confirm Payment`
+    res.send(response)
+    
+    } else if (text == '2*1*1*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let companyName = 'Jekora Limited'
+    let response = `END Thank You for Choosing ${companyName}'
+    res.send(response)
+      //End of pay with Airtel
+ 
+     
+       //Paywith Vodaphone
+  } else if (text == '1*3') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let response = `CON Enter Amount
+    1.Continue`
+    res.send(response)
+    
+  } else if (text == '1*3*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let response = `CON Enter Pin:
+    1.Confirm Payment`
+    res.send(response)
+    
+   } else if (text == '1*3*1*1') {
+    // Business logic for first level responsV
+    // This is a terminal request. Note how we start the response with END
+    let companyName = 'Jekora Limited'
+    let response = `END Thank You for Choosing ${companyName}'
+    res.send(response)
+//End of pay with Vodaphone
+
   } else {
     res.status(400).send('Bad request!')
   }
