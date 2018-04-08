@@ -32,10 +32,6 @@ app.post('*', (req, res) => {
     2. Airtel 
     3. Vodaphone `
     res.send(response)
-  } else if (text == '2') {
-    // Business logic for first level response
-    let response = `END Your phone number is ${phoneNumber}`
-    res.send(response)
     
     //Paywith MTN
   } else if (text == '1*1') {
