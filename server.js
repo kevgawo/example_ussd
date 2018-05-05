@@ -17,8 +17,7 @@ app.post('*', function (req, res) {
     if (text == '') {
         // This is the first request. Note how we start the response with CON
         //First session to get client info
-        let response = `CON Make Easy payments to your service provider.Enter Customer Code;
-    // 1.Continiue to payments`
+        let response = `CON Make Easy payments to your service provider.Enter Customer Code`;
 
         res.send(response)
 
@@ -39,18 +38,23 @@ app.post('*', function (req, res) {
     } else if (text == '1*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Amount
-    1.Continue`;
+        let response = `CON Enter Amount`;
         res.send(response)
 
-    } else if (text == '1*1*1') {
+    } else if (text == '1*1*300') {
+        // Business logic for first level responsV
+        // This is a terminal request. Note how we start the response with END
+        let response = `CON Enter Pin:`;
+        res.send(response)
+
+    } else if (text == '1*1*300*4040') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:
     1.Confirm Payment`;
         res.send(response)
 
-    } else if (text == '1*1*1*1') {
+    } else if (text == '1*1*300*4040&*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let companyName = 'Jekora Limited';
