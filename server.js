@@ -17,13 +17,15 @@ app.post('*', function (req, res) {
     if (text == '') {
         // This is the first request. Note how we start the response with CON
         //First session to get client info
-        let response = `CON Make Easy payments to yur service provider.Enter Customer Code and press 1 to continue
-    1.Continiue to payments`;
+        let response = `CON Make Easy payments to your service provider.Enter Customer Code;
+    // 1.Continiue to payments`
+
         res.send(response)
 
         //show client information and mode of payment
-    } else if (text == '1') {
+    } else if (text == 'A555') {
         // Business logic for first level response
+        let customerId = 'A555';
         let customerName = 'Kevin Gawo';
         let customerBill = 'GHC 300';
 
