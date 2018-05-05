@@ -50,7 +50,7 @@ app.post('*', function (req, res) {
     } else if (text == 'A555*1*300*4040') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Pin:
+        let response = `CON Confirm Payment:
     1.Confirm Payment`;
         res.send(response)
 
