@@ -57,7 +57,7 @@ app.post('*', function (req, res) {
     } else if (text == 'A555*1*300*4040*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let companyName = 'Jekora Limited';
+        let companyName = 'Juja Collection Limited';
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
         //End of pay with MTN
