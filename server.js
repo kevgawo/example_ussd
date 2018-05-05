@@ -63,26 +63,25 @@ app.post('*', function (req, res) {
         //End of pay with MTN
 
         //Pay with Airtel
-//     } else if (text == '1*2') {
+    } else if (text == 'A555*2') {
 //     Business logic for first level responsV
 //     This is a terminal request. Note how we start the response with END
-//    let response = `CON Enter Amount
-//     1.Continue`
-//     res.send(response)
+   let response = `CON Enter Amount`;
+    res.send(response)
 
-//   } else if (text == '2*1*1') {
+  } else if (text == 'A555*2*300') {
 //     // Business logic for first level responsV
 //     // This is a terminal request. Note how we start the response with END
-//     let response = `CON Enter Pin:
-//     1.Confirm Payment`
-//     res.send(response)
+    let response = `CON Enter Pin:
+//     1.Confirm Payment`;
+    res.send(response)
 
-//     } else if (text == '2*1*1*1') {
+    } else if (text == 'A555*2*300*1') {
 //     // Business logic for first level responsV
 //     // This is a terminal request. Note how we start the response with END
-//     let companyName = 'Jekora Limited'
-//     let response = `END Thank You for Choosing ${companyName}'
-//     res.send(response)
+    let companyName = 'Juja Collection Company'
+    let response = `END Thank You for Choosing ${companyName}`;
+    res.send(response)
 //       //End of pay with Airtel
 
 
