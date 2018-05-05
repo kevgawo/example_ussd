@@ -35,26 +35,26 @@ app.post('*', function (req, res) {
         res.send(response)
 
         //Paywith MTN
-    } else if (text == '1*1') {
+    } else if (text == 'A555*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Amount`;
         res.send(response)
 
-    } else if (text == '1*1*300') {
+    } else if (text == 'A555*1*300') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:`;
         res.send(response)
 
-    } else if (text == '1*1*300*4040') {
+    } else if (text == 'A555*1*300*4040') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:
     1.Confirm Payment`;
         res.send(response)
 
-    } else if (text == '1*1*300*4040&*1') {
+    } else if (text == 'A555*1*300*4040*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let companyName = 'Jekora Limited';
