@@ -87,24 +87,28 @@ app.post('*', function (req, res) {
 
 
         //Paywith Vodaphone
-    } else if (text == '1*3') {
+    } else if (text == 'A555*3') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Amount
     1.Continue`;
         res.send(response)
 
-    } else if (text == '1*3*1') {
+    } else if (text == 'A555*3*300') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Pin:
-    1.Confirm Payment`;
+        let response = `CON Enter Pin:`;
         res.send(response)
 
-    } else if (text == '1*3*1*1') {
+    } else if (text=='A555*3*300*4040'){
+        let response = `CON Confirm payment:
+        1.Confirm payment`
+        res.send(response)
+
+    } else if (text == 'A555*3*300*4040*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let companyName = 'Jekora Limited';
+        let companyName = 'Juja Collection Company';
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
 //End of pay with Vodaphone
