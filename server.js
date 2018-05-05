@@ -17,7 +17,8 @@ app.post('*', function (req, res) {
     if (text == '') {
         // This is the first request. Note how we start the response with CON
         //First session to get client info
-        let response = `CON Make Easy payments to your service provider.Enter Customer Code`;
+        let response = `CON Make Easy payments to your service provider.
+        Enter Customer Code`;
 
         res.send(response)
 
@@ -25,7 +26,7 @@ app.post('*', function (req, res) {
     } else if (text == 'A555') {
         // Business logic for first level response
         let customerId = 'A555';
-        let customerName = 'Kevin Gawo';
+        let customerName = 'Yao Klu';
         let customerBill = 'GHC 300';
 
         let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
@@ -36,26 +37,22 @@ app.post('*', function (req, res) {
 
         //Paywith MTN
     } else if (text == 'A555*1') {
-        // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Amount`;
         res.send(response)
 
     } else if (text == 'A555*1*300') {
-        // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:`;
         res.send(response)
 
     } else if (text == 'A555*1*300*4040') {
-        // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let response = `CON Confirm Payment:
     1.Confirm Payment`;
         res.send(response)
 
     } else if (text == 'A555*1*300*4040*1') {
-        // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
         let companyName = 'Juja Collection Limited';
         let response = `END Thank You for Choosing ${companyName}`;
@@ -64,19 +61,18 @@ app.post('*', function (req, res) {
 
         //Pay with Airtel
     } else if (text == 'A555*2') {
-//     Business logic for first level responsV
 //     This is a terminal request. Note how we start the response with END
    let response = `CON Enter Amount`;
     res.send(response)
 
   } else if (text == 'A555*2*300') {
-//     // Business logic for first level responsV
-//     // This is a terminal request. Note how we start the response with END
+        // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:`;
         res.send(response)
 
     } else if (text == 'A555*2*300*4040'){
-        let response = `CON Confirm Payment:`;
+        let response = `CON Confirm Payment:
+        1.Confirm Payment`;
         res.send(response)
 
     } else if (text == 'A555*2*300*4040*1') {
