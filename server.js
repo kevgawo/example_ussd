@@ -17,7 +17,7 @@ app.post('*', function (req, res) {
     if (text == '') {
         // This is the first request. Note how we start the response with CON
         //First session to get client info
-        let response = `CON Make Easy payments to your service provider.
+        let response = `CON Jumeni Pay,Make Easy payments to your service provider.
         Enter Customer Code`;
 
         res.send(response)
@@ -32,7 +32,7 @@ app.post('*', function (req, res) {
         let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
             1. MTN 
             2. Airtel 
-            3. Vodaphone `;
+            3. Vodafone `;
         res.send(response)
 
         //Paywith MTN
