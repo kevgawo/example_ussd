@@ -30,9 +30,7 @@ app.post('*', function (req, res) {
         let customerBill = 'GHC 300';
 
         let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
-            1. MTN 
-            2. Airtel 
-            3. Vodafone `;
+            1.Make Payment`;
         res.send(response)
 
         //Paywith MTN
