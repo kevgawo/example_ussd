@@ -19,9 +19,9 @@ app.post('*', function (req, res) {
         //First session to get client ino
         let customerName = 'Yao Klu';
         let customerBill = 'GHC 300';
-        let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
-            1.Make Payment ;
-            2.Make Complaint`;
+        let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}. Pay With:
+            1. Pay Bills 
+            2. Make Complaint`;
         
         res.send(response)
 
@@ -46,18 +46,18 @@ app.post('*', function (req, res) {
 
     } else if (text == '1') {
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Pin:`;
+        let response = `CON Confirm payment of GHS 300 to Jekora Waste. Enter Pin to confirm:`;
         res.send(response)
 
     } else if (text == '1*4040') {
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Confirm Payment for 300 Cedi to Jekora Waste:
+        let response = `CON Press 1 to confirm or any number to cancel:
     1.Confirm Payment`;
         res.send(response)
 
     } else if (text == '1*4040*1') {
         // This is a terminal request. Note how we start the response with END
-        let companyName = 'Jekora Ventures Ltd powered Jumeni';
+        let companyName = 'Jekora Ventures Ltd. Powered by Jumeni';
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
         //End of pay with MTN
