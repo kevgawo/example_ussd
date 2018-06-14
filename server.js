@@ -54,7 +54,7 @@ app.post('*', function (req, res) {
 
     } else if (text == 'A555*1*300*4040*1') {
         // This is a terminal request. Note how we start the response with END
-        let companyName = 'Juja Collection Limited';
+        let companyName = 'Jekora Ventures Ltd powered Jumeni';
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
         //End of pay with MTN
@@ -78,7 +78,7 @@ app.post('*', function (req, res) {
     } else if (text == 'A555*2*300*4040*1') {
 //     // Business logic for first level responsV
 //     // This is a terminal request. Note how we start the response with END
-    let companyName = 'Juja Collection Company'
+    let companyName = 'Jekora Ventures Ltd powered by Jumeni'
     let response = `END Thank You for Choosing ${companyName}`;
     res.send(response)
 //       //End of pay with Airtel
@@ -106,7 +106,7 @@ app.post('*', function (req, res) {
     } else if (text == 'A555*3*300*4040*1') {
         // Business logic for first level responsV
         // This is a terminal request. Note how we start the response with END
-        let companyName = 'Juja Collection Company powerd by Dispose payment';
+        let companyName = 'Jekora Ventures Ltd powered by Jumeni';
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
 //End of pay with Vodaphone
