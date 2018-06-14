@@ -16,41 +16,46 @@ app.post('*', function (req, res) {
     let {sessionId, serviceCode, phoneNumber, text} = req.body;
     if (text == '') {
         // This is the first request. Note how we start the response with CON
-        //First session to get client info
-        let response = `CON Jumeni Pay,Make Easy payments to your service provider.
-        Enter Customer Code`;
-
-        res.send(response)
-
-        //show client information and mode of payment
-    } else if (text == 'A555') {
-        // Business logic for first level response
-        let customerId = 'A555';
+        //First session to get client ino
         let customerName = 'Yao Klu';
         let customerBill = 'GHC 300';
-
         let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
-            1.Make Payment`;
+            1.Make Payment ;
+            2.Make Complaint`;
+        
         res.send(response)
+
+//         res.send(response)
+
+        //show client information and mode of payment
+//     } else if (text == 'A555') {
+        // Business logic for first level response
+//         let customerId = 'A555';
+//         let customerName = 'Yao Klu';
+//         let customerBill = 'GHC 300';
+
+//         let response = `CON Welcome ${customerName} yor bill for this month is ${customerBill}.Pay With:
+//             1.Make Payment`;
+//         res.send(response)
 
         //Paywith MTN
-    } else if (text == 'A555*1') {
+//     } else if (text == '') {
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Amount`;
-        res.send(response)
+//         let response = `CON Enter Amount`;
+//         res.send(response)
 
-    } else if (text == 'A555*1*300') {
+    } else if (text == '1') {
         // This is a terminal request. Note how we start the response with END
         let response = `CON Enter Pin:`;
         res.send(response)
 
-    } else if (text == 'A555*1*300*4040') {
+    } else if (text == '1*4040') {
         // This is a terminal request. Note how we start the response with END
-        let response = `CON Confirm Payment:
+        let response = `CON Confirm Payment for 300 Cedi to Jekora Waste:
     1.Confirm Payment`;
         res.send(response)
 
-    } else if (text == 'A555*1*300*4040*1') {
+    } else if (text == '1*4040*1') {
         // This is a terminal request. Note how we start the response with END
         let companyName = 'Jekora Ventures Ltd powered Jumeni';
         let response = `END Thank You for Choosing ${companyName}`;
