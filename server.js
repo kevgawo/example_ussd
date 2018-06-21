@@ -9,11 +9,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('*', function (req, res) {
-    res.send('This is an example USSD application build by Kevin Gawo')
+    res.send('Customer Payment')
 })
 
 app.post('*', function (req, res) {
-    let {sessionId, serviceCode, phoneNumber, text} = req.body;
+    
+    let phoneNumber = req.body.CustomerMsisdn;
+    let sessionId = req.body.sessionId;
+    let Channel = req.body.Channel;
+    let customerName = req.body.CustomerName;
+    let token = req.body.Token;
+    var text = req.body.text
+
+console.log(phoneNumber, sessionId,Channel,customerName, token)
+    
     if (text == '') {
         // This is the first request. Note how we start the response with CON
         //First session to get client ino
@@ -61,59 +70,7 @@ app.post('*', function (req, res) {
         let response = `END Thank You for Choosing ${companyName}`;
         res.send(response)
         //End of pay with MTN
-
-        //Pay with Airtel
-    } else if (text == 'A555*2') {
-//     This is a terminal request. Note how we start the response with END
-   let response = `CON Enter Amount`;
-    res.send(response)
-
-  } else if (text == 'A555*2*300') {
-        // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Pin:`;
-        res.send(response)
-
-    } else if (text == 'A555*2*300*4040'){
-        let response = `CON Confirm Payment:
-        1.Confirm Payment`;
-        res.send(response)
-
-    } else if (text == 'A555*2*300*4040*1') {
-//     // Business logic for first level responsV
-//     // This is a terminal request. Note how we start the response with END
-    let companyName = 'Jekora Ventures Ltd powered by Jumeni'
-    let response = `END Thank You for Choosing ${companyName}`;
-    res.send(response)
-//       //End of pay with Airtel
-
-
-        //Paywith Vodaphone
-    } else if (text == 'A555*3') {
-        // Business logic for first level responsV
-        // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Amount
-    1.Continue`;
-        res.send(response)
-
-    } else if (text == 'A555*3*300') {
-        // Business logic for first level responsV
-        // This is a terminal request. Note how we start the response with END
-        let response = `CON Enter Pin:`;
-        res.send(response)
-
-    } else if (text=='A555*3*300*4040'){
-        let response = `CON Confirm payment:
-        1.Confirm payment`
-        res.send(response)
-
-    } else if (text == 'A555*3*300*4040*1') {
-        // Business logic for first level responsV
-        // This is a terminal request. Note how we start the response with END
-        let companyName = 'Jekora Ventures Ltd powered by Jumeni';
-        let response = `END Thank You for Choosing ${companyName}`;
-        res.send(response)
-//End of pay with Vodaphone
-
+     
     } else {
         res.status(400).send('Bad request!')
     }
